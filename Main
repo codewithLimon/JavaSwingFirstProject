@@ -1,0 +1,123 @@
+package JFrame;
+import javax.swing.*;
+import javax.swing.border.AbstractBorder;
+import java.awt.*;
+
+class Frame extends JFrame{
+
+    private Container c;
+    private ImageIcon frameIcon;
+    private JLabel fullLogoImage, or,fblogin;
+    private JTextField userName, pass;
+    private ImageIcon fullLogo;
+
+    private Font f1,f2,f3,f4;
+
+    private Checkbox saveLoginInfo;
+    private JButton login;
+    private ImageIcon fbLogo;
+
+
+    Frame(){
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+        setBounds(20,40,400,500);
+        setTitle("Instagram");
+        initComponent1();
+    }
+
+    public void initComponent1(){
+
+
+        //frame props:
+        c=this.getContentPane();
+        c.setLayout(null);
+        c.setBackground(Color.white);
+
+        frameIcon=new ImageIcon("C:\\Users\\rvivy\\Downloads\\instagram.png");
+        this.setIconImage(frameIcon.getImage());
+
+        //font props:
+
+        f1=new Font("Arial",Font.ITALIC,12);
+        f2=new Font("Roboto",Font.PLAIN,13);
+        f3=new Font("Arial",Font.BOLD,15);
+        f4=new Font("Arial",Font.BOLD,14);
+
+        //color props:
+        Color customColor = new Color(0,165,255);
+
+        //Insta logo as JLabel
+
+        fullLogo=new ImageIcon(getClass().getResource("flogo.png"));
+
+        fullLogoImage=new JLabel(fullLogo);
+        fullLogoImage.setBounds(125,50,200,100);
+        c.add(fullLogoImage);
+
+        //username JTextField
+        userName=new JTextField();
+        userName.setBounds(100,150, 250,40);
+        userName.setText("  Phone number, username, or email");
+        userName.setToolTipText("Enter the phone number/username/email address associated with your instagram account");
+        userName.setFont(f1);
+        userName.setForeground(Color.gray);
+
+        c.add(userName);
+
+        //password JTextField
+
+        pass=new JTextField();
+        pass.setBounds(100,200, 250,40);
+        pass.setText("  Password");
+        pass.setToolTipText("Enter your Instagram password");
+        pass.setFont(f1);
+        pass.setForeground(Color.gray);
+
+        c.add(pass);
+
+        //checkbox to save login info
+
+        saveLoginInfo=new Checkbox("Save login info");
+        saveLoginInfo.setFont(f2);
+        saveLoginInfo.setBounds(100,260,250,30);
+        c.add(saveLoginInfo);
+
+        //login Jbutton
+
+        login=new JButton("Log in");
+        login.setBorder(new AbstractBorder() {
+        });
+        login.setBackground(customColor);
+        login.setBounds(100,300,250,30);
+        login.setForeground(Color.WHITE);
+        login.setFont(f3);
+        login.setToolTipText("Click here to login into your account");
+        c.add(login);
+
+        //or Jlabel:
+
+//        or=new JLabel("                            OR                       ");
+//        or.setForeground(Color.LIGHT_GRAY);
+//        or.setBounds(100,350,250,20);
+//        or.setFont(f4);
+//        c.add(or);
+
+        //facebook logo:
+//        fbLogo=new ImageIcon(getClass().getResource("Facebook-logo.png"));
+//        fblogin=new JLabel(fbLogo);
+//        fblogin.setBounds(100,410,100,100);
+//        c.add(fblogin);
+
+
+
+
+
+
+    }
+}
+public class Frame3Test {
+    public static void main(String[] args) {
+        Frame f=new Frame();
+    }
+}
